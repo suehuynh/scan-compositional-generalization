@@ -1,4 +1,8 @@
 from torch.utils.data import DataLoader
+import sys
+sys.path.insert(0, '.')
+from data.dataset import SCANDataset
+
 
 def create_dataloaders(train_path, comp_test_path, vocab_path, 
                        batch_size=32, max_input_len=50, max_output_len=50):
@@ -16,7 +20,6 @@ def create_dataloaders(train_path, comp_test_path, vocab_path,
     Returns:
         Tuple of (train_loader, comp_test_loader, vocab)
     """
-    from dataset import SCANDataset
     
     # Build train dataset and vocabulary
     train_dataset = SCANDataset(
@@ -76,16 +79,12 @@ if __name__ == "__main__":
     batch = next(iter(train_loader))
     print(f"Train batch input shape: {batch[0].shape}")
     print(f"Train batch output shape: {batch[1].shape}")
-    print(f"Train batch input lengths: {batch[2]}")
-    print(f"Train batch output lengths: {batch[3]}")
     
     # Test comp loader
     print("\n[3] Testing compositional test DataLoader...")
     batch = next(iter(comp_test_loader))
     print(f"Comp batch input shape: {batch[0].shape}")
     print(f"Comp batch output shape: {batch[1].shape}")
-    print(f"Comp batch input lengths: {batch[2]}")
-    print(f"Comp batch output lengths: {batch[3]}")
     
     # Test decoding
     print("\n[4] Testing token decoding...")
