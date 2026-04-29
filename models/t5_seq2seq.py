@@ -66,9 +66,14 @@ class T5SeqToSeq(nn.Module):
     def decode(self, token_ids, skip_special_tokens=True):
         """Decode token IDs back to text."""
         if token_ids.dim() == 1:
+            token_ids = token_ids[token_ids != 0]
             return self.tokenizer.decode(token_ids, skip_special_tokens=skip_special_tokens)
         else:
-            return self.tokenizer.batch_decode(token_ids, skip_special_tokens=skip_special_tokens)
+            decoded = []
+            for tokens in token_ids:
+                tokens = tokens[tokens != 0]
+                decoded.append(self.tokenizer.decode(tokens, skip_special_tokens=skip_special_tokens))
+            return decoded
         
     def generate(self, input_ids, attention_mask, max_length=MAX_GENERATION_LENGTH):
         """Generate output sequences."""
