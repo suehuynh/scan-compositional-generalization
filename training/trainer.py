@@ -91,13 +91,13 @@ class T5Trainer:
 
                 predictions = self.model.generate(input_ids, input_attn)
 
-                for pred, target, target_len in zip(predictions, output_ids, output_lengths):
+                for pred, target in zip(predictions, output_ids):
                     pred_tokens = self.model.decode(pred)
-                    target_tokens = self.model.decode(target[:target_len])
-
+                    target_tokens = self.model.decode(target)
+                    
                     if pred_tokens == target_tokens:
                         total_correct += 1
-                total_samples += 1
+                    total_samples += 1
         avg_loss = total_loss / len(val_loader)
         avg_accuracy = total_correct / total_samples if total_samples > 0 else 0
         
