@@ -1,8 +1,10 @@
 import torch
 from torch.utils.data import Dataset
+import sys
+sys.path.insert(0, '.')
 from collections import Counter
-import pickle
 from pathlib import Path
+from config.config import *
 
 class SCANDataset(Dataset):
     """
@@ -10,33 +12,14 @@ class SCANDataset(Dataset):
     Handles tokenization, vocabulary building, and padding.
     """
     
-    def __init__(self, filepath, max_input_length=50, max_output_length=50, 
+    def __init__(self, filepath, tokenizer, max_input_length=MAX_INPUT_LENGTH, max_output_length=MAX_OUTPUT_LENGTH, 
                  vocab=None, build_vocab=False):
-        """
-        Args:
-            filepath (str): Path to SCAN .txt file
-            max_input_length (int): Maximum input sequence length
-            max_output_length (int): Maximum output sequence length
-            vocab (dict): Pre-built vocabulary with keys 'input' and 'output'
-            build_vocab (bool): Whether to build vocabulary from this dataset
-        """
         self.filepath = filepath
         self.max_input_length = max_input_length
         self.max_output_length = max_output_length
-        
-        # Store examples as (input_tokens, output_tokens)
+        self.tokenizer = tokenizer 
         self.examples = []
-        
-        # Initialize vocabularies
-        self.input_vocab = vocab['input'] if vocab else None
-        self.output_vocab = vocab['output'] if vocab else None
-        
-        # Load examples from file
         self._load_examples()
-        
-        # Build vocabularies if requested
-        if build_vocab:
-            self._build_vocab()
     
     def _load_examples(self):
         """
@@ -53,51 +36,6 @@ class SCANDataset(Dataset):
                     output_actions = cmd_act[1].split()
                     self.examples.append((input_cmd, output_actions))
     
-    def _build_vocab(self):
-        """
-        Build input and output vocabularies from examples.
-        """
-        print("Building vocabularies...")
-        
-        input_tokens = []
-        output_tokens = []
-        for input_token, output_token in self.examples:
-            input_tokens.extend(input_token)
-            output_tokens.extend(output_token)
-        
-        input_counter = Counter(input_tokens)
-        output_counter = Counter(output_tokens)
-
-        self.input_vocab = {'<PAD>': 0, '<UNK>': 1}
-        for i, (token, count) in enumerate(input_counter.most_common(), start=2):
-            self.input_vocab[token] = i
-
-        self.output_vocab = {'<PAD>': 0, '<UNK>': 1}
-        for i, (token, count) in enumerate(output_counter.most_common(), start=2):
-            self.output_vocab[token] = i
-        print(f"Input vocab size: {len(self.input_vocab)}")
-        print(f"Output vocab size: {len(self.output_vocab)}")
-
-    def _tokens_to_ids(self, tokens, vocab, max_length):
-        """
-        Convert token list to padded tensor of IDs.
-        
-        Args:
-            tokens (list): List of string tokens
-            vocab (dict): Vocabulary mapping tokens to IDs
-            max_length (int): Length to pad to
-        
-        Returns:
-            torch.LongTensor of shape (max_length,)
-        """
-        ids = []
-        for token in tokens[:max_length]:
-            if token in vocab:
-                id = vocab.get(token, vocab["<UNK>"])
-                ids.append(id)
-        ids.extend([vocab["<PAD>"]] * (max_length - len(ids)))
-        return torch.LongTensor(ids)
-    
     def __len__(self):
         """Return number of examples."""
         return len(self.examples)
@@ -106,69 +44,28 @@ class SCANDataset(Dataset):
         input_tokens, output_tokens = self.examples[idx]
         input_ids = self._tokens_to_ids(input_tokens, self.input_vocab, self.max_input_length)
         output_ids = self._tokens_to_ids(output_tokens, self.output_vocab, self.max_output_length)
-        
-        # input_length = len(input_tokens)
-        # output_length = len(output_tokens)
 
         input_attention_mask = (input_ids != 0).long()
         output_attention_mask = (output_ids != 0).long()
         
         return input_ids, output_ids, input_attention_mask, output_attention_mask
 
-
-    def save_vocab(self, filepath):
-        """Save vocabularies to file."""
-        vocab = {
-            'input': self.input_vocab,
-            'output': self.output_vocab
-        }
-        with open(filepath, 'wb') as f:
-            pickle.dump(vocab, f)
-        print(f"Saved vocabularies to {filepath}")
-    
-    @staticmethod
-    def load_vocab(filepath):
-        """Load vocabularies from file."""
-        with open(filepath, 'rb') as f:
-            vocab = pickle.load(f)
-        print(f"Loaded vocabularies from {filepath}")
-        return vocab
-    
-    def get_vocab(self):
-        """Return current vocabularies."""
-        return {
-            'input': self.input_vocab,
-            'output': self.output_vocab
-        }
-    
-    def vocab_size(self):
-        """Return vocabulary sizes."""
-        return {
-            'input': len(self.input_vocab),
-            'output': len(self.output_vocab)
-        }
-    
-    def _ids_to_tokens(self, ids, vocab, input_or_output='input'):
-        """
-        Convert ID tensor back to tokens (reverse of _tokens_to_ids).
+    def __getitem__(self, idx):
+        input_tokens, output_tokens = self.examples[idx]
         
-        Args:
-            ids (torch.LongTensor): Tensor of IDs, shape (sequence_length,)
-            vocab (dict): Vocabulary mapping tokens to IDs
-            input_or_output (str): 'input' or 'output' (for which reverse vocab to use)
+        input_text = ' '.join(input_tokens)
+        output_text = ' '.join(output_tokens)
         
-        Returns:
-            List of tokens (without <PAD> tokens)
-        """
-        # Create reverse vocabulary (id -> token)
-        reverse_vocab = {v: k for k, v in vocab.items()}
+        input_ids = self.tokenizer(input_text, max_length=50, padding='max_length', 
+                                truncation=True, return_tensors='pt')['input_ids'].squeeze()
+        output_ids = self.tokenizer(output_text, max_length=50, padding='max_length',
+                                truncation=True, return_tensors='pt')['input_ids'].squeeze()
         
-        # Convert IDs to tokens
-        tokens = []
-        for id_val in ids:
-            id_val = id_val.item()  # Convert tensor to Python int
-            if id_val == 0:  # Stop at PAD token
-                break
-            token = reverse_vocab.get(id_val, '<UNK>')
-            tokens.append(token)
-        return tokens
+        input_attn = (input_ids != 0).long()
+        output_attn = (output_ids != 0).long()
+        
+        return input_ids, output_ids, input_attn, output_attn
+    
+    def _ids_to_tokens(self, token_ids):
+        """Decode token IDs back to tokens using T5 tokenizer."""
+        return self.tokenizer.decode(token_ids, skip_special_tokens=True)
