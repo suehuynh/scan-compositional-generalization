@@ -17,7 +17,7 @@ DROPOUT = 0.3
 # Training hyperparameters
 BATCH_SIZE = 64
 LEARNING_RATE = 0.001
-EPOCHS = 100
+EPOCHS = 10
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 EARLY_STOPPING_PATIENCE = 3
 
