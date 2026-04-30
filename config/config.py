@@ -6,6 +6,15 @@ PROJECT_ROOT = Path(__file__).parent.parent
 DATA_DIR = PROJECT_ROOT / "data" / "scan"
 RESULTS_DIR = PROJECT_ROOT / "results"
 LOG_DIR = PROJECT_ROOT / "logs"
+TRAIN_PATH = 'data/scan/simple_split/tasks_train_simple.txt'
+COMP_TEST_PATHS = {
+    'standard': 'data/scan/simple_split/tasks_test_simple.txt',
+    'addprim_jump': 'data/scan/add_prim_split/tasks_test_addprim_jump.txt',
+    'fewshot': 'data/scan/few_shot_split/tasks_test_fewshot_num1_rep1.txt',
+    'filler_split': 'data/scan/filler_split/tasks_test_filler_num0.txt',
+    'length_split': 'data/scan/length_split/tasks_test_length.txt',
+    'template_split': 'data/scan/template_split/tasks_test_template_around_right.txt',
+}
 
 # Model hyperparameters
 MODEL_NAME = 't5-small'
