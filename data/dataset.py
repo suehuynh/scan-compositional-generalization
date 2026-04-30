@@ -39,16 +39,6 @@ class SCANDataset(Dataset):
     def __len__(self):
         """Return number of examples."""
         return len(self.examples)
-    
-    def __getitem__(self, idx):
-        input_tokens, output_tokens = self.examples[idx]
-        input_ids = self._tokens_to_ids(input_tokens, self.input_vocab, self.max_input_length)
-        output_ids = self._tokens_to_ids(output_tokens, self.output_vocab, self.max_output_length)
-
-        input_attention_mask = (input_ids != 0).long()
-        output_attention_mask = (output_ids != 0).long()
-        
-        return input_ids, output_ids, input_attention_mask, output_attention_mask
 
     def __getitem__(self, idx):
         input_tokens, output_tokens = self.examples[idx]

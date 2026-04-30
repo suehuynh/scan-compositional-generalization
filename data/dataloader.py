@@ -34,8 +34,8 @@ if __name__ == "__main__":
     # Create dataloaders
     print("\n[1] Creating dataloaders...")
     train_loader, comp_loader, tokenizer = create_dataloaders(
-        train_path='data/scan/simple_split/tasks_train_simple.txt',
-        comp_test_path='data/scan/add_prim_split/tasks_test_addprim_jump.txt',
+        train_path=TRAIN_PATH,
+        comp_test_path=COMP_TEST_PATHS['standard'],
         batch_size=4
     )
     print("Dataloaders created")
