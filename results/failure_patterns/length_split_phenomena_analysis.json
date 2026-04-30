@@ -1,0 +1,74 @@
+{
+  "MODIFIER": {
+    "count": 13,
+    "examples": [
+      {
+        "input": "run around left thrice after turn left twice",
+        "target": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_RUN I_TURN_LEFT I_RUN I_TURN_LEFT I_RUN I_",
+        "prediction": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_RUN I_TURN_LEFT I_RUN I_TURN_LE",
+        "error_type": "INCOMPLETE"
+      },
+      {
+        "input": "look around left thrice after turn left twice",
+        "target": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_",
+        "prediction": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_TURN_LE",
+        "error_type": "INCOMPLETE"
+      },
+      {
+        "input": "turn left thrice and look around left thrice",
+        "target": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_TURN_LE",
+        "prediction": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LO",
+        "error_type": "WRONG ACTION"
+      }
+    ],
+    "rate": 1.0
+  },
+  "NESTING": {
+    "count": 13,
+    "examples": [
+      {
+        "input": "run around left thrice after turn left twice",
+        "target": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_RUN I_TURN_LEFT I_RUN I_TURN_LEFT I_RUN I_",
+        "prediction": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_RUN I_TURN_LEFT I_RUN I_TURN_LE",
+        "error_type": "INCOMPLETE"
+      },
+      {
+        "input": "look around left thrice after turn left twice",
+        "target": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_",
+        "prediction": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_TURN_LE",
+        "error_type": "INCOMPLETE"
+      },
+      {
+        "input": "turn left thrice and look around left thrice",
+        "target": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_TURN_LE",
+        "prediction": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LO",
+        "error_type": "WRONG ACTION"
+      }
+    ],
+    "rate": 1.0
+  },
+  "CONJUNCTION": {
+    "count": 6,
+    "examples": [
+      {
+        "input": "turn left thrice and look around left thrice",
+        "target": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LOOK I_TURN_LE",
+        "prediction": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_LOOK I_TURN_LEFT I_LO",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "turn left thrice and run around left thrice",
+        "target": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_RUN I_TURN_LEFT I_RUN I_TURN_LE",
+        "prediction": "I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_TURN_LEFT I_RUN I_TURN_LEFT I_R",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "turn opposite right thrice and look around right thrice",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_LOOK I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      }
+    ],
+    "rate": 0.46153846153846156
+  }
+}

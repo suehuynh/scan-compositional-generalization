@@ -1,0 +1,74 @@
+{
+  "MODIFIER": {
+    "count": 13,
+    "examples": [
+      {
+        "input": "turn opposite right thrice and jump around right",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "jump around right twice after turn opposite right thrice",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "turn opposite right thrice and jump around right twice",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      }
+    ],
+    "rate": 0.6842105263157895
+  },
+  "NESTING": {
+    "count": 19,
+    "examples": [
+      {
+        "input": "turn opposite right thrice and jump around right",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "jump around right twice after turn opposite right thrice",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "turn opposite right thrice and jump around right twice",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      }
+    ],
+    "rate": 1.0
+  },
+  "CONJUNCTION": {
+    "count": 11,
+    "examples": [
+      {
+        "input": "turn opposite right thrice and jump around right",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "turn opposite right thrice and jump around right twice",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "turn left and jump around right",
+        "target": "I_TURN_LEFT I_TURN_RIGHT I_JUMP I_TURN_RIGHT I_JUMP I_TURN_RIGHT I_JUMP I_TURN_RIGHT I_JUMP",
+        "prediction": "I_TURN_LEFT I_TURN_RIGHT I_JUMP I_TURN_RIGHT I_JUMP I_TURN_RIGHT I_JUMP I_TURN_RIGHT I_JUMP I_",
+        "error_type": "REPETITION"
+      }
+    ],
+    "rate": 0.5789473684210527
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "MODIFIER": {
+    "count": 49,
+    "examples": [
+      {
+        "input": "turn opposite right thrice and walk around right",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_WALK I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "run around right and look twice",
+        "target": "I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_LOOK I_LOOK",
+        "prediction": "I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_LOOK I_LOOK I",
+        "error_type": "REPETITION"
+      },
+      {
+        "input": "turn opposite right thrice and jump around right",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_JUMP I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      }
+    ],
+    "rate": 0.532608695652174
+  },
+  "NESTING": {
+    "count": 89,
+    "examples": [
+      {
+        "input": "turn opposite right thrice and walk around right",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_WALK I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "look around right after run",
+        "target": "I_RUN I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK",
+        "prediction": "I_RUN I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_",
+        "error_type": "REPETITION"
+      },
+      {
+        "input": "look around right after turn left",
+        "target": "I_TURN_LEFT I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK",
+        "prediction": "I_TURN_LEFT I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_TURN_RIGHT I_LOOK I_",
+        "error_type": "REPETITION"
+      }
+    ],
+    "rate": 0.967391304347826
+  },
+  "CONJUNCTION": {
+    "count": 53,
+    "examples": [
+      {
+        "input": "turn opposite right thrice and walk around right",
+        "target": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_WALK I_TUR",
+        "prediction": "I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I_TURN_RIGHT I",
+        "error_type": "WRONG ACTION"
+      },
+      {
+        "input": "look and run around right",
+        "target": "I_LOOK I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN",
+        "prediction": "I_LOOK I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_",
+        "error_type": "REPETITION"
+      },
+      {
+        "input": "run around right and look twice",
+        "target": "I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_LOOK I_LOOK",
+        "prediction": "I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_TURN_RIGHT I_RUN I_LOOK I_LOOK I",
+        "error_type": "REPETITION"
+      }
+    ],
+    "rate": 0.5760869565217391
+  }
+}
