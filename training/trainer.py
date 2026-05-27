@@ -103,7 +103,7 @@ class T5Trainer:
         
         return avg_loss, avg_accuracy
     
-    def fit(self, train_loader, val_loader, epochs=10, early_stopping_patience=3):
+    def fit(self, train_loader, val_loader, epochs=EPOCHS, early_stopping_patience=3):
         """
         Train for multiple epochs with early stopping.
         
