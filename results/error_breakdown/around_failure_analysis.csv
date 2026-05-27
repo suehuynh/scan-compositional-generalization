@@ -1,0 +1,157 @@
+input,error_type,num_modifiers,around_position,word_before,split
+turn left and run around right,REPETITION,1,4,run,standard
+turn around left and turn left twice,REPETITION,2,1,turn,standard
+turn around left,REPETITION,1,1,turn,standard
+run opposite left and turn around right,REPETITION,1,5,turn,standard
+turn left and walk around right,REPETITION,1,4,walk,standard
+jump around right and turn right,REPETITION,1,1,jump,standard
+turn opposite left and turn around left,REPETITION,1,5,turn,standard
+jump around right and run twice,REPETITION,2,1,jump,standard
+look and run around right,REPETITION,1,3,run,standard
+jump and look around right,REPETITION,1,3,look,standard
+turn right and walk around right,REPETITION,1,4,walk,standard
+look twice after look around right,REPETITION,2,4,look,standard
+jump around right and jump twice,REPETITION,2,1,jump,standard
+walk around right and run twice,REPETITION,2,1,walk,standard
+walk around right after turn left,REPETITION,1,1,walk,standard
+run and walk around right,REPETITION,1,3,walk,standard
+run and look around right,REPETITION,1,3,look,standard
+jump and walk around right,REPETITION,1,3,walk,standard
+turn around right after turn left thrice,REPETITION,2,1,turn,standard
+walk around right and turn right,REPETITION,1,1,walk,standard
+jump around right after turn left,REPETITION,1,1,jump,standard
+look around right and look twice,REPETITION,2,1,look,standard
+look around right after run,REPETITION,1,1,look,standard
+walk around right and walk twice,REPETITION,2,1,walk,standard
+run around right,REPETITION,1,1,run,standard
+jump opposite left and turn around right,REPETITION,1,5,turn,standard
+run around right and jump twice,REPETITION,2,1,run,standard
+jump around right and walk twice,REPETITION,2,1,jump,standard
+run after turn around left,REPETITION,1,3,turn,standard
+run around right after run,REPETITION,1,1,run,standard
+turn left and jump around right,REPETITION,1,4,jump,fewshot
+jump twice after jump around right,REPETITION,2,4,jump,fewshot
+jump and jump around right,REPETITION,1,3,jump,fewshot
+run and jump around right,REPETITION,1,3,jump,fewshot
+jump around right and walk twice,REPETITION,2,1,jump,fewshot
+jump around right and look twice,REPETITION,2,1,jump,fewshot
+jump around right and jump twice,REPETITION,2,1,jump,fewshot
+run twice after jump around right,REPETITION,2,4,jump,fewshot
+jump around right and run twice,REPETITION,2,1,jump,fewshot
+jump around right after turn left,REPETITION,1,1,jump,fewshot
+jump around right after jump,REPETITION,1,1,jump,fewshot
+jump around right and turn right,REPETITION,1,1,jump,fewshot
+walk twice after jump around right,REPETITION,2,4,jump,fewshot
+run and jump around right,REPETITION,1,3,jump,addprim_jump
+look around right and jump twice,REPETITION,2,1,look,addprim_jump
+turn around right after jump right twice,REPETITION,2,1,turn,addprim_jump
+run twice after jump around right,REPETITION,2,4,jump,addprim_jump
+turn around right after jump opposite left,REPETITION,1,1,turn,addprim_jump
+jump and run around right,REPETITION,1,3,run,addprim_jump
+look around right after jump,REPETITION,1,1,look,addprim_jump
+walk twice after jump around right,REPETITION,2,4,jump,addprim_jump
+jump twice after jump around right,REPETITION,2,4,jump,addprim_jump
+walk around right and jump twice,REPETITION,2,1,walk,addprim_jump
+jump twice after run around right,REPETITION,2,4,run,addprim_jump
+jump left twice and turn around right,REPETITION,2,5,turn,addprim_jump
+jump around left,REPETITION,1,1,jump,addprim_jump
+run around right after jump,REPETITION,1,1,run,addprim_jump
+jump right twice and turn around right,REPETITION,2,5,turn,addprim_jump
+jump twice after look around right,REPETITION,2,4,look,addprim_jump
+jump around right and look twice,REPETITION,2,1,jump,addprim_jump
+turn left and jump around right,REPETITION,1,4,jump,addprim_jump
+jump and jump around right,REPETITION,1,3,jump,addprim_jump
+jump around right after jump,REPETITION,1,1,jump,addprim_jump
+jump around right and turn right,REPETITION,1,1,jump,addprim_jump
+jump around right and run twice,REPETITION,2,1,jump,addprim_jump
+jump and look around right,REPETITION,1,3,look,addprim_jump
+jump around right and jump twice,REPETITION,2,1,jump,addprim_jump
+jump and walk around right,REPETITION,1,3,walk,addprim_jump
+jump around right after turn left,REPETITION,1,1,jump,addprim_jump
+jump opposite left and turn around right,REPETITION,1,5,turn,addprim_jump
+run around right and jump twice,REPETITION,2,1,run,addprim_jump
+jump around right and walk twice,REPETITION,2,1,jump,addprim_jump
+turn left and jump around right,REPETITION,1,4,jump,filler_split
+jump twice after jump around right,REPETITION,2,4,jump,filler_split
+jump and jump around right,REPETITION,1,3,jump,filler_split
+run and jump around right,REPETITION,1,3,jump,filler_split
+jump around right and walk twice,REPETITION,2,1,jump,filler_split
+jump around right and look twice,REPETITION,2,1,jump,filler_split
+jump around right and jump twice,REPETITION,2,1,jump,filler_split
+run twice after jump around right,REPETITION,2,4,jump,filler_split
+jump around right and run twice,REPETITION,2,1,jump,filler_split
+jump around right after turn left,REPETITION,1,1,jump,filler_split
+jump around right after jump,REPETITION,1,1,jump,filler_split
+jump around right and turn right,REPETITION,1,1,jump,filler_split
+walk twice after jump around right,REPETITION,2,4,jump,filler_split
+look around right after run,REPETITION,1,1,look,template_split
+look around right after turn left,REPETITION,1,1,look,template_split
+look and run around right,REPETITION,1,3,run,template_split
+run around right and look twice,REPETITION,2,1,run,template_split
+walk and look around right,REPETITION,1,3,look,template_split
+run around right after turn right,REPETITION,1,1,run,template_split
+jump twice after look around right,REPETITION,2,4,look,template_split
+jump and look around right,REPETITION,1,3,look,template_split
+turn left and run around right,REPETITION,1,4,run,template_split
+run twice after run around right,REPETITION,2,4,run,template_split
+look around right and look twice,REPETITION,2,1,look,template_split
+walk around right and jump twice,REPETITION,2,1,walk,template_split
+run around right after run,REPETITION,1,1,run,template_split
+turn left and walk around right,REPETITION,1,4,walk,template_split
+run around right and walk twice,REPETITION,2,1,run,template_split
+turn right and walk around right,REPETITION,1,4,walk,template_split
+run twice after look around right,REPETITION,2,4,look,template_split
+turn left and jump around right,REPETITION,1,4,jump,template_split
+jump twice after jump around right,REPETITION,2,4,jump,template_split
+walk twice after look around right,REPETITION,2,4,look,template_split
+turn right and look around right,REPETITION,1,4,look,template_split
+look around right after walk,REPETITION,1,1,look,template_split
+look and look around right,REPETITION,1,3,look,template_split
+look around right after jump,REPETITION,1,1,look,template_split
+walk around right and turn right,REPETITION,1,1,walk,template_split
+jump and jump around right,REPETITION,1,3,jump,template_split
+run around right and run twice,REPETITION,2,1,run,template_split
+look around right and run twice,REPETITION,2,1,look,template_split
+run and jump around right,REPETITION,1,3,jump,template_split
+run around right after turn left,REPETITION,1,1,run,template_split
+run and look around right,REPETITION,1,3,look,template_split
+jump and walk around right,REPETITION,1,3,walk,template_split
+jump and run around right,REPETITION,1,3,run,template_split
+run around right and jump twice,REPETITION,2,1,run,template_split
+run twice after walk around right,REPETITION,2,4,walk,template_split
+look around right after look,REPETITION,1,1,look,template_split
+walk around right,REPETITION,1,1,walk,template_split
+walk around right after turn left,REPETITION,1,1,walk,template_split
+walk around right and look twice,REPETITION,2,1,walk,template_split
+run around right after jump,REPETITION,1,1,run,template_split
+walk around right and run twice,REPETITION,2,1,walk,template_split
+jump around right and walk twice,REPETITION,2,1,jump,template_split
+walk around right and walk twice,REPETITION,2,1,walk,template_split
+look around right and turn right,REPETITION,1,1,look,template_split
+walk twice after walk around right,REPETITION,2,4,walk,template_split
+look around right,REPETITION,1,1,look,template_split
+jump twice after run around right,REPETITION,2,4,run,template_split
+jump around right and look twice,REPETITION,2,1,jump,template_split
+run around right,REPETITION,1,1,run,template_split
+walk twice after run around right,REPETITION,2,4,run,template_split
+run and run around right,REPETITION,1,3,run,template_split
+jump around right and jump twice,REPETITION,2,1,jump,template_split
+run twice after jump around right,REPETITION,2,4,jump,template_split
+jump around right and run twice,REPETITION,2,1,jump,template_split
+jump around right after turn left,REPETITION,1,1,jump,template_split
+run around right and turn right,REPETITION,1,1,run,template_split
+look around right and jump twice,REPETITION,2,1,look,template_split
+run around right after walk,REPETITION,1,1,run,template_split
+run and walk around right,REPETITION,1,3,walk,template_split
+walk and walk around right,REPETITION,1,3,walk,template_split
+look around right and walk twice,REPETITION,2,1,look,template_split
+jump around right after jump,REPETITION,1,1,jump,template_split
+turn right and run around right,REPETITION,1,4,run,template_split
+look and walk around right,REPETITION,1,3,walk,template_split
+jump around right and turn right,REPETITION,1,1,jump,template_split
+look twice after look around right,REPETITION,2,4,look,template_split
+turn left and look around right,REPETITION,1,4,look,template_split
+run around right after look,REPETITION,1,1,run,template_split
+look around right after turn right,REPETITION,1,1,look,template_split
+walk twice after jump around right,REPETITION,2,4,jump,template_split
+walk and run around right,REPETITION,1,3,run,template_split
