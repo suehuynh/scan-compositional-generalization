@@ -44,24 +44,21 @@ class ErrorAnalyzer:
         - WRONG_ACTION: Wrong action generated
         - WRONG_ORDER: Correct actions but wrong order
         - REPETITION: Too many repetitions
-        - TRUNCATED: Output cut off early
         - OTHER: Doesn't fit other categories
         """
         target_tokens = target_text.split()
         pred_tokens = pred_text.split()
 
-        # if prediction is short
         if len(pred_tokens) < len(target_tokens):
             return 'INCOMPLETE'
 
-        # if prediction is long
         if len(pred_tokens) > len(target_tokens):
             # if mismatched actions are wrong
             if any(t not in pred_tokens for t in target_tokens):
                 return 'WRONG ACTION'
             return 'REPETITION'
         
-        # if  are right but wrong order
+        # if actions are right but wrong order
         if set(pred_tokens) == set(target_tokens):
             return 'WRONG ORDER'
         
