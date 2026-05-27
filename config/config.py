@@ -26,17 +26,16 @@ DROPOUT = 0.3
 # Training hyperparameters
 BATCH_SIZE = 64
 LEARNING_RATE = 0.001
-EPOCHS = 10
+EPOCHS = 1
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 EARLY_STOPPING_PATIENCE = 3
 
 
 # Dataset
-MAX_LENGTH = 50  # Max command length
+MAX_LENGTH = 999  # Max command length
 MAX_INPUT_LENGTH = 50
-MAX_OUTPUT_LENGTH = 50
-MAX_GENERATION_LENGTH = 50
-VOCAB_SIZE = 100  # Approximate (will compute from data)
+MAX_OUTPUT_LENGTH = 300
+MAX_GENERATION_LENGTH = 300
 
 import os
 SAVE_DIR = os.path.join(os.path.dirname(__file__), '../results/models')
