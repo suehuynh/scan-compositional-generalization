@@ -46,9 +46,9 @@ class SCANDataset(Dataset):
         input_text = ' '.join(input_tokens)
         output_text = ' '.join(output_tokens)
         
-        input_ids = self.tokenizer(input_text, max_length=50, padding='max_length', 
+        input_ids = self.tokenizer(input_text, max_length=MAX_INPUT_LENGTH, padding='max_length', 
                                 truncation=True, return_tensors='pt')['input_ids'].squeeze()
-        output_ids = self.tokenizer(output_text, max_length=50, padding='max_length',
+        output_ids = self.tokenizer(output_text, max_length=MAX_OUTPUT_LENGTH, padding='max_length',
                                 truncation=True, return_tensors='pt')['input_ids'].squeeze()
         
         input_attn = (input_ids != 0).long()
